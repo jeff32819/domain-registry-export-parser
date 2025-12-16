@@ -3,14 +3,17 @@ using CsvHelper.Configuration.Attributes;
 
 namespace DomainRegistryExportParserDll.Models
 {
+    /// <summary>
+    /// NOT tested, since I don't use GoDaddy. At one time it worked.
+    /// </summary>
     public class Model
     {
-        [Name("Auto-renew")] public string AutoRenew { get; set; }
-        [Name("Domain Name")] public string DomainName { get; set; }
+        [Name("Auto-renew")] public string AutoRenew { get; set; } = string.Empty;
+        [Name("Domain Name")] public string DomainName { get; set; } = string.Empty;
 
-        [Name("Expiration Date")] public string ExpirationDate { get; set; }
-        [Name("Lock")] public string Lock { get; set; }
-        [Name("Privacy")] public string Privacy { get; set; }
+        [Name("Expiration Date")] public string ExpirationDate { get; set; } = string.Empty;
+        [Name("Lock")] public string Lock { get; set; } = string.Empty;
+        [Name("Privacy")] public string Privacy { get; set; } = string.Empty;
     }
 
     public class Map : ClassMap<Model>
